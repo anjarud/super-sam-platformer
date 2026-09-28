@@ -1,0 +1,14 @@
+# Godot
+.godot/
+/android/
+
+# Export / deployment
+web/
+web-export/
+
+# Temporary files
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db

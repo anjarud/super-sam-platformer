@@ -1,0 +1,280 @@
+[gd_scene format=3 uid="uid://dv1uemnjpr40j"]
+
+[ext_resource type="Texture2D" uid="uid://2wgvg6r6exjf" path="res://assets/textures/bg/dev_room.png" id="1_4ospm"]
+[ext_resource type="Script" uid="uid://cnw853i5ubdv" path="res://scripts/dev_room.gd" id="1_xmhf2"]
+[ext_resource type="PackedScene" uid="uid://c5hg7lddiimbq" path="res://scenes/player.tscn" id="2_d27c4"]
+[ext_resource type="FontFile" path="res://assets/fonts/lincoln/LincolnMITRE-LM5x7.otf" id="3_7lvt2"]
+[ext_resource type="PackedScene" uid="uid://dlp66chtd3gii" path="res://scenes/mue_scene.tscn" id="3_ynnkj"]
+[ext_resource type="FontFile" uid="uid://choyo6bck2lge" path="res://assets/fonts/Kenney Pixel Square.ttf" id="4_d27c4"]
+[ext_resource type="FontFile" uid="uid://4uexh4w6tyq3" path="res://assets/fonts/PressStart2P-Regular.ttf" id="4_xmhf2"]
+[ext_resource type="FontFile" uid="uid://8rxsy5q2rgjr" path="res://assets/fonts/StarJedi-DGRW.ttf" id="6_d7gx0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5506"]
+size = Vector2(479, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boaym"]
+size = Vector2(8, 86)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xmhf2"]
+size = Vector2(31.75, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d27c4"]
+bg_color = Color(0.0059696254, 0.097465836, 0.05580353, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.69324654, 0.69262004, 0.5775156, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5506"]
+bg_color = Color(0.12941177, 0.29803923, 0.2509804, 0.9019608)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0.007843138, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cotae"]
+bg_color = Color(0, 0, 0, 0.9019608)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.34925875, 0.2590327, 9.62615e-08, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p71yw"]
+bg_color = Color(0.075987436, 3.200883e-05, 4.185871e-05, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.28723356, 0.046435334, 0.0030609954, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83omd"]
+bg_color = Color(0.4627451, 0.6431373, 0.6039216, 0.9019608)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cotae"]
+size = Vector2(14, 351)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_83omd"]
+size = Vector2(20, 365)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4jxn"]
+size = Vector2(21, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e4tdo"]
+size = Vector2(57, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kiumy"]
+size = Vector2(48, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cil7j"]
+size = Vector2(2, 11)
+
+[node name="dev_room" type="Node2D" unique_id=1744132]
+script = ExtResource("1_xmhf2")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=306833701]
+position = Vector2(243.09999, 134.92499)
+scale = Vector2(0.2893541, 0.2892136)
+texture = ExtResource("1_4ospm")
+
+[node name="Floor" type="StaticBody2D" parent="." unique_id=1814019419]
+position = Vector2(1, 66)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=97830785]
+position = Vector2(246.5, 132)
+shape = SubResource("RectangleShape2D_y5506")
+
+[node name="Player" parent="." unique_id=969954667 instance=ExtResource("2_d27c4")]
+z_index = 1
+position = Vector2(60.000004, 144)
+scale = Vector2(1.5, 1.5)
+jump_sound_enabled = false
+
+[node name="Camera2D" parent="Player" index="2" unique_id=1790702754]
+enabled = false
+
+[node name="ExitDoor" type="Node2D" parent="." unique_id=144921176]
+
+[node name="Area2D" type="Area2D" parent="ExitDoor" unique_id=1531046745]
+collision_layer = 17
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitDoor/Area2D" unique_id=1522627425]
+position = Vector2(10, 75)
+shape = SubResource("RectangleShape2D_boaym")
+
+[node name="DoorPlatform" type="StaticBody2D" parent="ExitDoor" unique_id=897084207]
+collision_layer = 17
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitDoor/DoorPlatform" unique_id=462223655]
+position = Vector2(24.125, 130)
+shape = SubResource("RectangleShape2D_xmhf2")
+one_way_collision = true
+
+[node name="UI_Layer" type="CanvasLayer" parent="." unique_id=1391155783]
+
+[node name="ComputerScreen" type="PanelContainer" parent="UI_Layer" unique_id=582375009]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -85.0
+offset_right = 150.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_d27c4")
+
+[node name="Text" type="RichTextLabel" parent="UI_Layer/ComputerScreen" unique_id=1186870195]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.3043919, 0.99999994, 0.35693026, 1)
+theme_override_fonts/normal_font = ExtResource("3_7lvt2")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "
+MÜ-OS v 1.O
+
+> USER: Mü
+> STATUS: SLEEPING
+> TEA SUPPLY: CRITICAL
+
+C:\\DEV\\SUPER_SAM>"
+
+[node name="TeaMessage" type="PanelContainer" parent="UI_Layer" unique_id=225258693]
+visible = false
+offset_left = 269.0
+offset_top = 114.0
+offset_right = 339.0
+offset_bottom = 155.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_y5506")
+
+[node name="TeaText" type="Label" parent="UI_Layer/TeaMessage" unique_id=823933272]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_xmhf2")
+theme_override_font_sizes/font_size = 6
+text = "TEA LEVEL:
+CRITICAL"
+horizontal_alignment = 1
+
+[node name="StormtrooperMessage" type="PanelContainer" parent="UI_Layer" unique_id=1570443367]
+visible = false
+offset_left = 313.0
+offset_top = 51.0
+offset_right = 431.0
+offset_bottom = 100.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cotae")
+
+[node name="StormtrooperText" type="Label" parent="UI_Layer/StormtrooperMessage" unique_id=1304523484]
+layout_mode = 2
+theme_override_colors/font_color = Color(1.1886417, 0.9965117, 0, 1)
+theme_override_fonts/font = ExtResource("6_d7gx0")
+theme_override_font_sizes/font_size = 6
+text = "The Empire Strikes Back
+is the best
+Star Wars Movie"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IdeasMessage" type="PanelContainer" parent="UI_Layer" unique_id=17488167]
+visible = false
+offset_left = 349.0
+offset_top = 131.0
+offset_right = 452.0
+offset_bottom = 171.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_p71yw")
+
+[node name="IdeasText" type="Label" parent="UI_Layer/IdeasMessage" unique_id=147921570]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.88588476, 0.09228962, 9.62615e-08, 1)
+theme_override_fonts/font = ExtResource("4_d27c4")
+theme_override_font_sizes/font_size = 8
+text = "TOP SECRET!
+CONFIDENTIAL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ClickHint" type="PanelContainer" parent="UI_Layer" unique_id=1519468617]
+offset_left = 98.0
+offset_top = 23.0
+offset_right = 403.0
+offset_bottom = 123.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_83omd")
+
+[node name="ClickHintText" type="Label" parent="UI_Layer/ClickHint" unique_id=686922253]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.8235294, 0, 0.7411765, 0.84313726)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_d27c4")
+theme_override_font_sizes/font_size = 40
+text = "LOOK AROUND"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MueScene" parent="." unique_id=1378406841 instance=ExtResource("3_ynnkj")]
+position = Vector2(192, 97)
+scale = Vector2(0.4, 0.4)
+
+[node name="DeveloperRoom" type="Label" parent="." unique_id=1993722933]
+offset_left = 155.0
+offset_top = 232.0
+offset_right = 337.0
+offset_bottom = 260.0
+theme_override_colors/font_outline_color = Color(0.12983978, 0.6345925, 0.8428771, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("4_d27c4")
+theme_override_font_sizes/font_size = 18
+text = "DEVELOPER ROOM"
+
+[node name="Walls" type="StaticBody2D" parent="." unique_id=875400745]
+
+[node name="LeftWall" type="CollisionShape2D" parent="Walls" unique_id=1469545180]
+position = Vector2(0, 146)
+shape = SubResource("RectangleShape2D_cotae")
+
+[node name="RightWall" type="CollisionShape2D" parent="Walls" unique_id=59056630]
+position = Vector2(491, 152)
+shape = SubResource("RectangleShape2D_83omd")
+
+[node name="StormtrooperHotspot" type="Area2D" parent="." unique_id=596945164]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StormtrooperHotspot" unique_id=1611818530]
+position = Vector2(439, 96)
+shape = SubResource("RectangleShape2D_u4jxn")
+
+[node name="IdeasHotspot" type="Area2D" parent="." unique_id=1020339337]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IdeasHotspot" unique_id=1167814199]
+position = Vector2(451.5, 177)
+shape = SubResource("RectangleShape2D_e4tdo")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=201067758]
+collision_layer = 17
+collision_mask = 2
+
+[node name="step" type="CollisionShape2D" parent="StaticBody2D" unique_id=2112163633]
+position = Vector2(45, 150.5)
+shape = SubResource("RectangleShape2D_kiumy")
+one_way_collision = true
+
+[node name="SideBlocker" type="StaticBody2D" parent="." unique_id=1340837371]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SideBlocker" unique_id=717856141]
+position = Vector2(41, 130)
+shape = SubResource("RectangleShape2D_cil7j")
+
+[node name="HintTimer" type="Timer" parent="." unique_id=151138456]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="ExitDoor/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="HintTimer" to="." method="_on_hint_timer_timeout"]
+
+[editable path="Player"]

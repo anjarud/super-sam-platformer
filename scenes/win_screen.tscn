@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://bhb2mudtb2cl0"]
+
+[ext_resource type="Script" uid="uid://c0vfhqw2w66i0" path="res://scripts/win_screen.gd" id="1_erk2x"]
+[ext_resource type="FontFile" uid="uid://choyo6bck2lge" path="res://assets/fonts/Kenney Pixel Square.ttf" id="1_wv5lq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_y5506"]
+font = ExtResource("1_wv5lq")
+font_size = 48
+font_color = Color(0.9390478, 0.93041295, 0.6679492, 1)
+outline_size = 10
+outline_color = Color(1, 0.37649417, 0.45950598, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5506"]
+bg_color = Color(0.99999994, 0.2796224, 0.57456994, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_erk2x"]
+content_margin_top = 6.0
+content_margin_bottom = 6.0
+bg_color = Color(0.9019608, 0.44705883, 0.47843137, 0.78431374)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.93029344, 0.77206594, 0.483904, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="WinScreen" type="Control" unique_id=1146077359]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_erk2x")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=609349639]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.24049999, 0.65, 0.63635, 0.49019608)
+
+[node name="WinLabel" type="Label" parent="." unique_id=1884541878]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.0
+offset_top = -117.0
+offset_right = 126.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "YOU WIN!"
+label_settings = SubResource("LabelSettings_y5506")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=259838031]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = -43.0
+offset_right = 38.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.9656119, 0.42870623, 0.40658793, 1)
+theme_override_fonts/font = ExtResource("1_wv5lq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y5506")
+text = "OK..."
+
+[node name="ResultContainer" type="PanelContainer" parent="." unique_id=893033564]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.27708334
+anchor_top = 0.5370371
+anchor_right = 0.74583334
+anchor_bottom = 0.91481483
+offset_top = 6.9999847
+offset_bottom = 6.9999847
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_erk2x")
+metadata/_edit_use_anchors_ = true
+
+[node name="Results" type="Label" parent="ResultContainer" unique_id=247953382]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8745098, 0.5568628, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("1_wv5lq")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
